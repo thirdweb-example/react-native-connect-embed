@@ -1,56 +1,29 @@
-# React Native + thirdweb + TypeScript Starter Template
+# ConnectEmbed usage in React Native
 
-Got questions? Jump into our [Discord](https://discord.gg/thirdweb) to speak with us directly.
+This example demonstrates how to use `ConnectEmbed` component in React Native to create a "Sign in" screen.
 
-## Getting Started
+This template shows you how to connect a wallet using the `ConnectEmbed` component
 
-Create a project using this example:
+## Using this template
 
-```bash
-npx thirdweb create --template react-native-typescript-starter
-```
+- Clone this repository locally and then install the dependencies using `npm install` or `yarn install`
 
-Install dependencies:
+- Copy the `.env.example` file to `.env.local`
 
-```bash
-yarn install # or npm install
-```
+- [Create an API Key](https://portal.thirdweb.com/account/api-keys/create) and get the client id and set the `NEXT_PUBLIC_TEMPLATE_CLIENT_ID` environment variable in the `.env.local` file
 
-If you are developing on iOS, you will need to install the pods:
+  ```env
+  TW_CLIENT_ID=...
+  ```
 
-```bash
-cd ios && pod install
-```
+## Run your app
 
-## Get a clientId
-
-You can [get your clientId](https://thirdweb.com/dashboard/settings/api-keys) from our Dashboard and set it in the `.env` file.
-
-Please, make sure to add your app's `bundleId` in the Allowed Bundle IDs list. Here's more info on [how to get your app's bundleId](https://portal.thirdweb.com/api-keys#how-to-get-my-bundleid)
-
-## Running the app
-
-Android:
-
-```
-yarn android
-```
-
-iOS:
-
-```
-yarn ios
-```
+Run `npm run android` / `npm run ios` or `yarn android` / `yarn ios` to run your app
 
 ## Learn More
 
-To learn more about thirdweb and React Native, take a look at the following resources:
-
-- [thirdweb Portal](https://portal.thirdweb.com) - check our guides and development resources.
-- [thirdweb SDK](https://portal.thirdweb.com/sdk) - check our guides and development resources.
-- [React Native Documentation](https://reactnative.dev/) - learn about React Native features and API.
-
-You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
+- [thirdweb Auth Documentation](https://portal.thirdweb.com/wallets/auth)
+- [ConnectEmbed Documentation](https://portal.thirdweb.com/react-native/v0/components/ConnectEmbed)
 
 ## Join our Discord!
 

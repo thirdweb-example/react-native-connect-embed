@@ -1,16 +1,19 @@
 import {
+  Box,
+  ConnectEmbed,
   ConnectWallet,
   embeddedWallet,
   localWallet,
   metamaskWallet,
   rainbowWallet,
+  Text,
   ThirdwebProvider,
   trustWallet,
+  useAddress,
   walletConnect,
 } from '@thirdweb-dev/react-native';
 import React from 'react';
-import {StyleSheet, Text, useColorScheme, View} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {StyleSheet, View} from 'react-native';
 import {TW_CLIENT_ID} from '@env';
 
 const App = () => {
@@ -45,17 +48,25 @@ const App = () => {
 };
 
 const AppInner = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const textStyles = {
-    color: isDarkMode ? Colors.white : Colors.black,
-    ...styles.heading,
-  };
+  const address = useAddress();
 
   return (
     <View style={styles.view}>
-      <Text style={textStyles}>React Native thirdweb starter</Text>
-      <ConnectWallet />
+      {address ? (
+        <Box gap="md">
+          <Text textAlign="center">Welcome!</Text>
+          <ConnectWallet />
+        </Box>
+      ) : (
+        <ConnectEmbed
+          modalTitle="Sign in to get started"
+          modalTitleIconUrl=""
+          container={{
+            borderRadius: 'md',
+            paddingVertical: 'xl',
+          }}
+        />
+      )}
     </View>
   );
 };
@@ -65,13 +76,14 @@ const styles = StyleSheet.create({
     height: '100%',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
-    alignContent: 'center',
+    backgroundColor: 'black',
+    paddingHorizontal: 40,
   },
   heading: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    textAlign: 'center',
   },
 });
 
