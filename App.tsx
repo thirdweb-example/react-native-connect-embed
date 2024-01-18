@@ -13,7 +13,6 @@ import {
   walletConnect,
 } from '@thirdweb-dev/react-native';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
 import {TW_CLIENT_ID} from '@env';
 
 const App = () => {
@@ -51,40 +50,24 @@ const AppInner = () => {
   const address = useAddress();
 
   return (
-    <View style={styles.view}>
+    <Box
+      height="100%"
+      justifyContent="center"
+      paddingHorizontal="xmd"
+      backgroundColor="background">
       {address ? (
         <Box gap="md">
           <Text textAlign="center">Welcome!</Text>
           <ConnectWallet />
         </Box>
       ) : (
-        <ConnectEmbed
-          modalTitle="Sign in to get started"
-          modalTitleIconUrl=""
-          container={{
-            borderRadius: 'md',
-            paddingVertical: 'xl',
-          }}
-        />
+        <Box gap="md">
+          <Text textAlign="center">Welcome!</Text>
+          <ConnectEmbed modalTitle="" modalTitleIconUrl="" />
+        </Box>
       )}
-    </View>
+    </Box>
   );
 };
-
-const styles = StyleSheet.create({
-  view: {
-    height: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: 'black',
-    paddingHorizontal: 40,
-  },
-  heading: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    textAlign: 'center',
-  },
-});
 
 export default App;
