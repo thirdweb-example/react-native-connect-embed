@@ -4,8 +4,7 @@ This example demonstrates how to use `ConnectEmbed` component in React Native to
 
 This template shows you how to connect a wallet using the `ConnectEmbed` component
 
-![Screenshot_1705617962](https://github.com/thirdweb-example/react-native-connect-embed/assets/121973632/388ae8d6-6f88-44e8-a41e-5364baf9fd02)
-
+![Screenshot_1705617962](https://github.com/thirdweb-example/react-native-connect-embed/assets/121973632/9105a131-310a-4448-9d5e-8e470c5d4957)
 
 ## Using this template
 
